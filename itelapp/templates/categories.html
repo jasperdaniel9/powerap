@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} | Categories {% endblock title %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        {% if categories %}
+        {% for categories in categories %}
+        <div class="col-12 col-sm-6 col-lg-3  w-25 ">
+            <div class="card">
+                <img src="{{categories.image.url}}" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title"><li><a class="dropdown-item" href="{% url 'category' categories.id %}">{{categories.name}}</a></li></h5>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

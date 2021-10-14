@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ | Login Page
+{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="col-12 col-sm-3 col-lg-3"></div>
+    <div class="col-12 col-sm-6 col-lg-6">
+        <form method="POST" action="{% url 'loginpage' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="exampleInputText1" class="form-label">Username</label>
+              <input type="text" name="username" class="form-control" id="exampleInputText1" aria-describedby="textHelp">
+              <div id="textHelp" class="form-text">Login to your account</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+    <div class="col-12 col-sm-3 col-lg-3"></div>
+</div>
+{% endblock content %}
